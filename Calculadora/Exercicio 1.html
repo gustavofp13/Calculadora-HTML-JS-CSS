@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <script>
+        const executar = () => {
+            const a = eval(document.getElementById("v1").value);
+            const b = eval(document.getElementById("v2").value);
+            let oper = eval(document.getElementById("oper").selectedIndex);
+            let resultado = (oper == 0) ? somar(a, b) : (oper == 1) ? subtrair(a, b) :
+                (oper == 2) ? multiplicar(a, b) : (oper == 3) ? dividir(a, b) :exponencial(a, b);
+            document.getElementById("resp").innerHTML = `O resultado dessa operacao é ${resultado}`;
+        }        
+    </script>
+
+    <form>
+        <label>Valor A</label> <input type="number" id="v1">
+        <label>Valor B</label> <input type="number" id="v2">
+        <label>Operacao</label>
+        <select name="operador" id="oper">
+            <option>Soma</option>
+            <option>Subtracao</option>
+            <option>Multiplicacao</option>
+            <option>Divsao</option>
+            <option>Potencia</option>
+        </select>
+        <a href="#" onclick="executar()">Executar</a>
+    </form>
+    <div id="resp">O resultado aparece aqui: </div>
+</body>
+
+</html>
